@@ -11,6 +11,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { useToast } from "@/hooks/use-toast"
 import ErrorModal from "@/components/error-modal"
 import { X } from "lucide-react"
+import Image from "next/image"
 
 const DEFAULT_REFERRAL_ID = "110956" // Francisco Eliedisom Dos Santos
 
@@ -410,16 +411,16 @@ export default function RegistrationForm({ representante }: RegistrationFormProp
   // ── Welcome screen ──
   if (showWelcome) {
     return (
-      <div className="flex flex-col items-center justify-center gap-6 py-8 text-center">
-        <div className="max-w-xl space-y-4">
-          <p className="text-sm sm:text-base text-gray-700">
-            {"Seja Bem-vindo ao Registro de associados da Federal Associados. Aqui você contrata sua internet, sem consulta ao SPC/Serasa e sem fidelidade."}
-          </p>
-          <div className="rounded-lg bg-blue-50 border border-blue-600 p-4">
-            <p className="text-sm sm:text-base text-blue-800 mt-1">
-              {"Ao concluir o seu cadastro, será necessário o pagamento da sua adesão associativa, correspondente ao valor do plano escolhido por você."}
-            </p>
-          </div>
+      <div className="flex flex-col items-center justify-center gap-6 py-4 sm:py-8 text-center">
+        <div className="w-full max-w-2xl overflow-hidden rounded-xl shadow-lg">
+          <Image
+            src="/image copy 2.png"
+            alt="Internet turbinada Federal Associados"
+            width={1024}
+            height={1536}
+            priority
+            className="h-auto w-full"
+          />
         </div>
         <Button
           onClick={() => setShowWelcome(false)}
